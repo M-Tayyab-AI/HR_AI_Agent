@@ -54,13 +54,18 @@ The agent enforces a strict 3-tier permission model:
 ```
 HR_AI_Agent/
 │
+├── agents/
+│   ├── hr_agent.py           # Main agent orchestration & role enforcement
+│   ├── hr_agent_confiq.py    # Agent configuration & settings
+│   ├── hr_agent_llm.py       # LLM integration & Gemini API calls
+│   └── testing_agent.py      # Agent testing & debugging utilities
+├── prompts/
+│   └── llm_planner_prompt.py # System prompts & planner instructions for the agent
+├── data_base_connection.py   # Google Sheets API connection & CRUD operations
 ├── streamlit_app.py          # Main Streamlit UI entry point
-├── agent.py                  # Core AI agent logic & planning
-├── tools.py                  # HR action tools (read/write/delete)
-├── roles.py                  # Role definitions & permission rules
-├── sheets_client.py          # Google Sheets API integration
-├── .env.example              # Environment variable template
 ├── requirements.txt          # Python dependencies
+├── .env                      # Your local environment variables (never commit this)
+├── .env.example              # Environment variable template (safe to commit)
 └── README.md
 ```
 
